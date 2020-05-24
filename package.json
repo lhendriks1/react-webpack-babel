@@ -1,5 +1,5 @@
 {
-  "name": "advanced-react-webpack-babel-setup",
+  "name": "react-webpack-babel-setup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,19 +7,27 @@
     "start": "webpack-dev-server --config build-utils/webpack.config.js --env.env=dev",
     "build": "webpack --config build-utils/webpack.config.js --env.env=prod",
     "build:analyze": "npm run build -- --env.addon=bundleanalyze --env.addon=bundlevisualizer",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint --fix ./src"
   },
   "keywords": [],
-  "author": "Robin Wieruch <opensource@rwieruch.com> (https://www.robinwieruch.de)",
+  "author": "Lydia Hendriks",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@testing-library/jest-dom": "^5.7.0",
+    "@testing-library/react": "^10.0.4",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^26.0.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.3",
     "dotenv-webpack": "^1.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.4.0",
@@ -28,9 +36,13 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^26.0.1",
     "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.15",
+    "react-test-renderer": "^16.13.1",
+    "style-loader": "^1.2.1",
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.9",
@@ -42,5 +54,11 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFiles": [
+      "./setUpTests.js"
+    ]
   }
 }
