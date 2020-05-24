@@ -1,7 +1,6 @@
 # React-webpack-babel-setup
 
-Advanced React with Webpack Setup. How to set it up yourself:
-
+Advanced React with Webpack Setup.
 
 ## Features
 
